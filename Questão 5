@@ -1,0 +1,50 @@
+public abstract class Personagem{
+    protected String nome;
+    public Personagem(String nome) {
+        this.nome = nome;
+    }
+    public abstract void atacar();
+}
+
+public class Guerreiro extends Personagem{
+    public Guerreiro(String nome) {
+        super(nome);
+    }
+    @Override
+    public void atacar() {
+        System.out.println(nome + " ataca com espada pesada!");
+    }
+}
+
+public class Mago extends Personagem{
+    public Mago(String nome) {
+        super(nome);
+    }
+    @Override
+    public void atacar() {
+        System.out.println(nome + " lança uma bola de fogo!");
+    }
+}
+
+public class Arqueiro extends Personagem{
+    public Arqueiro(String nome) {
+        super(nome);
+    }
+    @Override
+    public void atacar() {
+        System.out.println(nome + " dispara uma flecha precisa!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Personagem[] personagens = new Personagem[3];
+        personagens[0] = new Guerreiro("Gustavo Lima");
+        personagens[1] = new Mago("Tiririca");
+        personagens[2] = new Arqueiro("Tirulipa");
+        System.out.println("=== Turno de Combate ===");
+        for (Personagem p : personagens) {
+            p.atacar(); 
+        }
+    }
+}
