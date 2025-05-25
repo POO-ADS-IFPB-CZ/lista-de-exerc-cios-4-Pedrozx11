@@ -1,0 +1,6 @@
+2- O private e o protected diferem na questão de proteção e acessibilidade, o private deixa as informações somente para a própria enquanto o protected permite que as
+sub-classes também possuam. O private em si é mais usado pelas simples questão de possuir maior segurança e preservação de dados sendo a opção de base e recomendável
+para tudo mas caso for um framework ou seja desejado maior flexibilidade então é recomendavél o uso do protected.
+
+3- Quando uma classe herda outra em java, a super-classe sempre é chamada antes do construtor da sub-classe sendo a chamada implícita ou explícita. É obrigatório pois
+a sub-classe herda campos e comportamenos da super-classe, sem um construtor com parâmetros o compilador não gera chamada e o código pode vir a não rodar.
