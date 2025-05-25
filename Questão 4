@@ -1,0 +1,40 @@
+public abstract class Pagamento{
+    public abstract void processar(double valor);
+}
+
+public class CartaoCredito extends Pagamento{
+    @Override
+    public void processar(double valor) {
+        double taxa = valor * 0.05;
+        double total = valor + taxa;
+        System.out.printf("Pagamento com Cartão de Crédito: Valor = %.2f, Taxa = %.2f, Total = %.2f%n", valor, taxa, total);
+    }
+}
+
+public class Boleto extends Pagamento{
+    @Override
+    public void processar(double valor) {
+        double desconto = 2.00;
+        double total = valor - desconto;
+        System.out.printf("Pagamento com Boleto: Valor = %.2f, Desconto = %.2f, Total = %.2f%n", valor, desconto, total);
+    }
+}
+
+public class Pix extends Pagamento{
+    @Override
+    public void processar(double valor) {
+        System.out.printf("Pagamento com Pix: Valor = %.2f, Sem taxas ou descontos.%n", valor);
+    }
+}
+
+public class Main{
+    public static void main(String[] args) {
+        Pagamento pagamento;
+        pagamento = new CartaoCredito();
+        pagamento.processar(100.00);
+        pagamento = new Boleto();
+        pagamento.processar(100.00);
+        pagamento = new Pix();
+        pagamento.processar(100.00);
+    }
+}
